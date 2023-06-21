@@ -1,3 +1,5 @@
+// Layout of the README format
+
 function generateMarkdown(questions) {
 	return `# ${questions.title}
   ## Description

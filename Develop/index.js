@@ -1,6 +1,10 @@
+// import required modules
+
 const fs = require("fs");
 const inquirer = require("inquirer");
 const generateMarkdown = require("./utils/generateMarkdown.js");
+
+// init() function including the questions for the inquirer prompt and writeToFile function
 
 function init() {
 	inquirer
@@ -94,16 +98,18 @@ function init() {
 		});
 }
 
+// writeToFile(response) function utilizing fs module to write a new file
+
 function writeToFile(response) {
 	fs.writeFile("README.md", generateMarkdown(response), (err) => {
 		if (err) {
 			console.log(err);
 			return console.log(err);
 		}
-
-		console.log("success");
-		console.log(response.title);
+		console.log("Success creating README");
 	});
 }
+
+// initiating init() function
 
 init();
