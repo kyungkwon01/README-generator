@@ -1,83 +1,109 @@
-// TODO: Include packages needed for this application
-import inquirer from "inquirer";
-import fs from "fs";
-import util from "util";
+const fs = require("fs");
+const inquirer = require("inquirer");
+const generateMarkdown = require("./utils/generateMarkdown.js");
 
-// TODO: Create an array of questions for user input
-const questions = inquirer.prompt([
-	{
-		type: "input",
-		message: "What is the project title?",
-		name: "Title",
-	},
-	{
-		type: "input",
-		message: "What is the description of the project?",
-		name: "Description",
-	},
-	{
-		type: "input",
-		message: "How do we install the project?",
-		name: "Installation",
-	},
-	{
-		type: "input",
-		message: "What is the usage of the project?",
-		name: "Usage",
-	},
-	{
-		type: "input",
-		message: "How do we contribute to the project?",
-		name: "Contributing",
-	},
-	{
-		type: "list",
-		message: "Do you have a liscense?",
-		choices: ["Eclipse", "apache-2.0", "GPLv3", "wtfpl", "N/A"],
-		name: "liscense",
-	},
-	{
-		type: "input",
-		message: "How do we test the project?",
-		name: "Test",
-	},
-	{
-		type: "input",
-		message: "Add your Github name here.",
-		name: "Questions",
-	},
-	{
-		type: "input",
-		message: "Add your Email address here.",
-		name: "Email",
-	},
-]);
+function init() {
+	inquirer
+		.prompt([
+			{
+				type: "input",
+				name: "title",
+				message: "Project Title:",
+			},
 
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {
-	fs.writeFile(fileName, generateMarkdown(data), () => {
-		console.log("README.md Generated!");
+			{
+				type: "input",
+				name: "description",
+				message: "Description:",
+			},
+
+			{
+				type: "input",
+				name: "installation",
+				message: "Installation:",
+			},
+
+			{
+				type: "input",
+				name: "usage",
+				message: "Usage:",
+			},
+
+			{
+				type: "input",
+				name: "collaborators",
+				message: "Collaborators:",
+			},
+
+			{
+				type: "input",
+				name: "contributing",
+				message: "Contribute:",
+			},
+
+			{
+				type: "input",
+				name: "tests",
+				message: "Test:",
+			},
+
+			{
+				type: "input",
+				name: "username",
+				message: "GitHub UserName:",
+			},
+
+			{
+				type: "input",
+				name: "email",
+				message: "Email:",
+			},
+
+			{
+				type: "list",
+				message: "Please choose a corresponding license from list below:",
+				name: "license",
+				choices: [
+					"Apache 2.0 License",
+					"BSD 3-Clause License",
+					"ISC License (ISC)",
+					"The MIT License",
+					"The Unlicense",
+				],
+			},
+		])
+		.then(function (response) {
+			if (response.license == "The MIT License") {
+				badge =
+					"[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)";
+			} else if (response.license == "Apache 2.0 License") {
+				badge =
+					"[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)";
+			} else if (response.license == "BSD 3-Clause License") {
+				badge =
+					"[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)";
+			} else if (response.license == "ISC License (ISC)") {
+				badge =
+					"[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)";
+			} else if (response.license == "The Unlicense") {
+				badge =
+					"[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)";
+			}
+
+			writeToFile(response);
+		});
+}
+
+function writeToFile(response) {
+	fs.writeFile("README.md", generateMarkdown(response), (err) => {
+		if (err) {
+			console.log(err);
+			return console.log(err);
+		}
+
+		console.log("success");
+		console.log(response.title);
 	});
 }
 
-// TODO: Create a function to initialize app
-async function init() {
-	try {
-		const promptData = await inquirer.prompt(questions);
-		const readMeData = { ...promptData };
-		const { username } = promptData;
-		const githubUser = await api.getUser(username);
-		const { email, avatar_url } = githubUser.data;
-		const newReadMeData = {
-			...readMeData,
-			email: email,
-			avatar: avatar_url,
-		};
-		writeToFile("README.md", newReadMeData);
-	} catch (err) {
-		throw err;
-	}
-}
-
-// Function call to initialize app
 init();
