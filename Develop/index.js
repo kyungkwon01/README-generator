@@ -106,7 +106,7 @@ function writeToFile(response) {
 			console.log(err);
 			return console.log(err);
 		}
-		console.log("Success creating README");
+		console.log("Done creating README");
 	});
 }
 

@@ -1,6 +1,6 @@
-# Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dapibus.
+# Title
   ## Description
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dapibus.
+  Description
   ## Table of Contents
   * [Installation](#Installation "Goto Installation")
   * [Usage](#Usage "Goto Usage")
@@ -9,20 +9,20 @@
   * [Tests](#Tests "Goto Tests")
   * [License](#License "Goto License")
   ## Installation
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dapibus.
+  Installation
   ## Usage
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dapibus.
+  Usage
   ## Collaborators
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dapibus.
+  Collaborators
   ## Contributing
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dapibus.
+  Contribute
   ## Tests
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dapibus.
+  Test
   ## License
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)<br>
   License: The MIT License
   ## Questions
   For additional questions you can reach me by<br>
-  Email: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dapibus. or <br>
-  GitHub: <a href="https://github.com/Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dapibus.">https://github.com/Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dapibus.</a><br>
+  Email: example@gmail.com or <br>
+  GitHub: <a href="https://github.com/example">https://github.com/example</a><br>
   

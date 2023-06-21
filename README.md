@@ -43,6 +43,8 @@ License: The MIT License
 
 ## Demo
 
+![Demo](./Develop/assets/Screen%20Recording%202023-06-21%20at%204.56.04%20PM.gif)
+
 ## Contact
 
 If you have any questions or need further assistance, feel free to reach out to me at kyungkwon01@gmail.com.
