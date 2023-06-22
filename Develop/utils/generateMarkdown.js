@@ -8,7 +8,7 @@ function generateMarkdown(questions) {
   * [Installation](#Installation "Goto Installation")
   * [Usage](#Usage "Goto Usage")
   * [Collaborators](#Collaborators "Goto Collaborators")
-  * [Credits](#Credits "Goto Credits")
+  * [Contributing](#Contributing "Goto Contributing")
   * [Tests](#Tests "Goto Tests")
   * [License](#License "Goto License")
   ## Installation
@@ -25,7 +25,7 @@ function generateMarkdown(questions) {
   ${badge}<br>
   License: ${questions.license}
   ## Questions
-  For additional questions you can reach me by<br>
+  Contact me if you have any questions.<br>
   Email: ${questions.email} or <br>
   GitHub: <a href="https://github.com/${questions.username}">https://github.com/${questions.username}</a><br>
   

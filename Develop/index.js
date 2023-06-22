@@ -42,7 +42,7 @@ function init() {
 			{
 				type: "input",
 				name: "contributing",
-				message: "Contribute:",
+				message: "Contributing:",
 			},
 
 			{
