@@ -45,6 +45,10 @@ License: The MIT License
 
 ![Demo](./Develop/assets/Screen%20Recording%202023-06-21%20at%204.56.04%20PM.gif)
 
+
+https://github.com/kyungkwon01/README-generator/assets/88059163/02a74813-d94c-4015-909a-63998abd21db
+
+
 ## Contact
 
 If you have any questions or need further assistance, feel free to reach out to me at kyungkwon01@gmail.com.
